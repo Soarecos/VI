@@ -1,0 +1,246 @@
+image-text {
+  .image-text-wrap {
+    display    : flex;
+    background : #ecede9;
+    height     : 520px;
+    align-items: center;
+    position   : relative;
+
+    .image-text-left,
+    .image-text-right {
+      margin-bottom: 2rem;
+      margin-top   : 0rem;
+
+      .image-text-title {
+        font-size: 1.5rem;
+      }
+
+      .image-text-description {
+        font-size    : 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+    }
+
+    .image-text-btn {
+      font-size : .75rem;
+      background: #000;
+      color     : #fff;
+      border    : none;
+      padding   : 7px 15px;
+      cursor    : pointer;
+      transition: all ease .2s;
+
+      &:hover {
+        background: lighten($color: #000000, $amount: 10);
+      }
+    }
+
+    .image-text-right {
+      float: right;
+    }
+
+    .image-text-image {
+      max-width: 100%;
+      height   : auto;
+    }
+
+  }
+
+  .image-text-contact-box {
+    background: #333a53;
+    transition: all ease 1s;
+    height    : 0;
+    overflow  : hidden;
+    position  : relative;
+
+    &-title {
+      font-size  : 1.5rem;
+      color      : #fff;
+      padding-top: 3rem;
+    }
+
+    &-close {
+      position  : absolute;
+      right     : 10px;
+      top       : 32px;
+      width     : 32px;
+      height    : 32px;
+      opacity   : 1;
+      transition: all ease .2s;
+      cursor    : pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:before,
+      &:after {
+        position        : absolute;
+        left            : 15px;
+        content         : ' ';
+        height          : 25px;
+        width           : 2px;
+        background-color: #fff;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &.active {
+      height: 320px;
+    }
+
+    &::after {
+      content   : '';
+      position  : absolute;
+      top       : 0;
+      left      : 0;
+      right     : 0;
+      height    : 15px;
+      background: #fff;
+    }
+
+    .container {
+      position: relative;
+
+      &::before {
+        content     : '';
+        position    : absolute;
+        top         : -20px;
+        left        : 15px;
+        width       : 0;
+        height      : 0;
+        border-style: solid;
+        border-width: 0 15px 15px 15px;
+        border-color: transparent transparent #333a53 transparent;
+        z-index     : 1;
+      }
+
+    }
+  }
+
+  .position-right {
+    .image-text-image {
+      left: 0;
+    }
+
+    .image-text-wrap {
+      display    : flex;
+      background : #ecede9;
+      height     : 520px;
+      align-items: center;
+      position   : relative;
+
+      .image-text-left,
+      .image-text-right {
+        margin-bottom: 2rem;
+        margin-top   : 0rem;
+      }
+
+      .container {
+        &::before {
+          left : unset;
+          right: 15px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .image-text-wrap {
+      height: 490px;
+
+      .image-text-left {
+        float        : left;
+        width        : 50%;
+        margin-bottom: 0;
+
+        .image-text-image {
+          right: 0;
+        }
+      }
+
+      .image-text-image {
+        max-height     : none;
+        height         : 100%;
+        position       : absolute;
+        top            : 0;
+        bottom         : 0;
+        object-fit     : cover;
+        width          : 50%;
+        object-position: left;
+      }
+    }
+
+    .position-right {
+
+      .image-text-image {
+        left: 0;
+      }
+
+      .image-text-contact-box {
+
+        &-close {
+          right: 35px;
+        }
+
+        .container {
+
+          &::before {
+            left : unset;
+            right: 35px;
+          }
+
+        }
+      }
+
+      .image-text-right {
+        width: 45%;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    .image-text-wrap {
+      .image-text-left {
+
+        .image-text-title,
+        .image-text-description {
+          padding-right: 3rem;
+        }
+      }
+
+      .image-text-right {
+        position: relative;
+        left    : 100px;
+
+        .image-text-title,
+        .image-text-description {
+          width: 82%;
+        }
+      }
+    }
+
+    .image-text-contact-box {
+
+      &-close {
+        opacity: 0.5;
+      }
+    }
+
+    .position-right {
+      .image-text-right {
+        width: 55%;
+      }
+    }
+  }
+}

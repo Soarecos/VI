@@ -1,0 +1,32 @@
+app-root {
+  header {
+    height     : 135px;
+    display    : flex;
+    align-items: center;
+
+    h1 {
+      font-size  : 2.25rem;
+      font-weight: 600;
+      color      : black;
+      padding    : 0 12px;
+      position   : relative;
+      margin     : 0;
+
+      &:before {
+        content   : '';
+        position  : absolute;
+        left      : 0px;
+        top       : 0;
+        bottom    : 0;
+        width     : 3px;
+        background: #df1d46;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    header {
+      height     : 195px;
+    }
+  }
+}
