@@ -1,2 +1,0 @@
-[functions.rebuild]
-schedule = "*/1 * * * *"
